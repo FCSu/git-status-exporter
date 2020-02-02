@@ -21,7 +21,7 @@ func main() {
 	r, err := git.PlainOpen(repoPath)
 	CheckIfError(err)
 
-	// Length of the HEAD history
+	// We'll get the last commit just like execute `git log -1`
 	Info("git log -1")
 
 	// ... retrieving the HEAD reference
@@ -49,7 +49,7 @@ func main() {
 	})
 	CheckIfError(err)
 
-	// ... retrieving the commit object
+	// ... retrieving the commit object and gather info
 	commit, err := r.CommitObject(ref.Hash())
 	CheckIfError(err)
 	containsLocalChange := strings.Contains(status.String(), " M ")
