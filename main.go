@@ -55,7 +55,7 @@ func main() {
 	containsLocalChange := strings.Contains(status.String(), " M ")
 	branch := ref.Name().Short()
 	commitHash := commit.Hash.String()[:7]
-	message := strings.TrimSuffix(commit.Message, "\n")
+	message := strings.Split(commit.Message, "\n")[0]
 
 	if containsLocalChange {
 		fmt.Println("Local Changes:")
