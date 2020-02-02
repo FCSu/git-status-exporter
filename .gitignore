@@ -1,0 +1,5 @@
+.DS_Store
+git-status-exporter
+node_exporter-*/
+my-repo/
+textfile_collector/
